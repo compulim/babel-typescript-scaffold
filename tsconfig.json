@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "lib",
+    "emitDeclarationOnly": true,
+    "pretty": true,
+    "skipLibCheck": true
+  },
+  "exclude": [
+    "src/**/*.spec.js",
+    "src/**/*.test.js",
+    "src/__test__/**/*.test.js",
+  ],
+  "include": [
+    "src/**/*"
+  ]
+}

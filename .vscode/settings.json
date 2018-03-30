@@ -1,0 +1,13 @@
+{
+  "files.exclude": {
+    "lib": false
+  },
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.tabSize": 2,
+  "editor.useTabStops": false,
+  "search.exclude": {
+    "lib": true
+  }
+}
