@@ -10,7 +10,7 @@
   "scripts": {
     "build": "concurrently --names \"babel,typecheck\" \"babel --extensions .js,.ts --ignore **/*.spec.js,**/*.spec.ts,**/*.test.js/,**/*.test.ts/,__test__/**/*.js,__test__/**/*.ts --out-dir lib --verbose src\" \"tsc\"",
     "build:watch": "concurrently --kill-others --names \"babel,typecheck\" \"babel --extensions .js,.ts --ignore **/*.spec.js,**/*.spec.ts,**/*.test.js/,**/*.test.ts/,__test__/**/*.js,__test__/**/*.ts --out-dir lib --verbose src --watch\" \"tsc --preserveWatchOutput --watch\"",
-    "test": "jest",
+    "test": "jest --coverage",
     "typecheck": "tsc"
   },
   "repository": {
