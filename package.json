@@ -2,10 +2,14 @@
   "name": "babel-typescript-scaffold",
   "version": "1.0.0-0",
   "description": "My own scaffold for compiling TypeScript using Babel in a modern way",
+  "files": [
+    "lib/**/*.js"
+  ],
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "build": "concurrently --names \"babel,typecheck\" \"babel --extensions .js,.ts --ignore **/*.spec.js,**/*.test.js/,__test__/**/* --out-dir lib --verbose src\" \"tsc\"",
-    "build:watch": "concurrently --kill-others --names \"babel,typecheck\" \"babel --extensions .js,.ts --ignore **/*.spec.js,**/*.test.js/,__test__/**/* --out-dir lib --verbose src --watch\" \"tsc --preserveWatchOutput --watch\"",
+    "build": "concurrently --names \"babel,typecheck\" \"babel --extensions .js,.ts --ignore **/*.spec.js,**/*.spec.ts,**/*.test.js/,**/*.test.ts/,__test__/**/*.js,__test__/**/*.ts --out-dir lib --verbose src\" \"tsc\"",
+    "build:watch": "concurrently --kill-others --names \"babel,typecheck\" \"babel --extensions .js,.ts --ignore **/*.spec.js,**/*.spec.ts,**/*.test.js/,**/*.test.ts/,__test__/**/*.js,__test__/**/*.ts --out-dir lib --verbose src --watch\" \"tsc --preserveWatchOutput --watch\"",
     "test": "jest",
     "typecheck": "tsc"
   },
@@ -26,12 +30,23 @@
     "url": "https://github.com/compulim/babel-typescript-scaffold/issues"
   },
   "homepage": "https://github.com/compulim/babel-typescript-scaffold#readme",
+  "jest": {
+    "moduleFileExtensions": ["js", "ts"],
+    "testMatch": [
+      "**/__tests__/**/*.[jt]s?(x)",
+      "**/?(*.)(spec|test).[jt]s?(x)"
+    ],
+    "transform": {
+      "^.+\\.[jt]sx?$": "babel-jest"
+    }
+  },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.42",
     "@babel/core": "^7.0.0-beta.42",
     "@babel/preset-env": "^7.0.0-beta.42",
     "@babel/preset-stage-3": "^7.0.0-beta.42",
     "@babel/preset-typescript": "^7.0.0-beta.42",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^22.4.3",
     "babel-preset-stage-3": "^6.24.1",
     "concurrently": "^3.5.1",

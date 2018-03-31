@@ -1,3 +1,3 @@
-export default function happyMeal(...v: number[]) {
-  return `Your number is ${ v.reduce((sum, v) => sum + v, 0) }`;
+export default function (...v: number[]) {
+  return v.reduce((sum, v) => sum + v, 0);
 }
